@@ -9,7 +9,7 @@ from utils.PorterStemmer import PorterStemmer
 
 print("Starting preprocessing phase ...")
 
-dataset_IT = pd.read_csv("./Datasets/JobsIT_Dataset.csv")
+dataset_IT = pd.read_csv("../Datasets/JobsIT_Dataset.csv")
 dataset_IT = dataset_IT.loc[:, ["Query", "Description"]]
 
 all_stopwords = stopwords.words('english')
@@ -25,11 +25,11 @@ for i in range(len(dataset_IT)):
     description = ' '.join(description)
     dataset_IT["Description"][i] = description
 
-dataset_IT.to_csv("./Cleaned_Datasets/JobsIT_Dataset.csv", index=False)
+dataset_IT.to_csv("../Cleaned_Datasets/JobsIT_Dataset.csv", index=False)
 
 print("IT dataset successfully cleaned! ..")
 
-dataset_nonIT = pd.read_csv("./Datasets/JobsNonIT_Dataset.csv")
+dataset_nonIT = pd.read_csv("../Datasets/JobsNonIT_Dataset.csv")
 dataset_nonIT = dataset_nonIT.loc[:, ["Query", "Description"]]
 
 print("Processing NONIT Dataset ...")
@@ -43,7 +43,7 @@ for i in range(len(dataset_nonIT)):
     description = ' '.join(description)
     dataset_nonIT["Description"][i] = description
     
-dataset_nonIT.to_csv("./Cleaned_Datasets/JobsNonIT_Dataset.csv",index=False)
+dataset_nonIT.to_csv("../Cleaned_Datasets/JobsNonIT_Dataset.csv",index=False)
 
 print("NONIT dataset successfully cleaned! ..")
 
